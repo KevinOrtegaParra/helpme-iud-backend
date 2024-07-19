@@ -24,15 +24,13 @@ spring:
             ddl-auto: update 
         show-sql: true
         defer-datasource-initialization: true
-            #para pruevas
-            #create-drop
             
     # Envio de Email
     mail:
         host: smtp.gmail.com
         port: 587
         username: kevin.ortegaap@est.iudigital.edu.co
-        password: kevinIUD1100752197
+        password: <contraseña_aqui>
         properties:
             mail:
               smtp:
