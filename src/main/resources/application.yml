@@ -1,0 +1,53 @@
+server:
+    port: 8084
+    servlet:
+        context-path: /api/v1
+        #files
+        multipart:
+            max-file-size: 20MB
+            max-request-size: 20MB
+      
+spring:
+    application:
+        name: helpmeiud-backend
+        
+    # database connection
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/helpmeiud_db?createDatabaseIfNotExist=true
+        username: root
+        password:
+            
+    # generate tables with java code
+    jpa:
+        hibernate:
+            ddl-auto: update 
+        show-sql: true
+        defer-datasource-initialization: true
+            #para pruevas
+            #create-drop
+            
+    # Envio de Email
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: kevin.ortegaap@est.iudigital.edu.co
+        password: kevinIUD1100752197
+        properties:
+            mail:
+              smtp:
+                auth: true
+                starttls:
+                  enable: true
+
+#spring security
+security:
+    jwt:
+        client-service: helpmeiud_db
+        password-service: 123456
+        scope-read: read
+        scope-write: write
+        grant-password: password
+        grant-refresh: refresh_token
+        token-validity-seconds: 3600
+        refresh-validity-seconds: 3600
